@@ -3,21 +3,29 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
+    <title>Voice Assistant</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
     />
-    <title>React App</title>
   </head>
   <body>
-    <body>
-      <main>
-        <button onclick="init()">start</button>
-      </main>
-      <div id="transcript"></div>
-    </body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <div id="top-container">
+      <h1 id="title">Voice Assistant</h1>
+      <button id="start-btn" class="simple-btn">Start Assistant</button>
+    </div>
+
+    <div id="visualizer-container">
+      <canvas id="output" width="250" height="200"></canvas>
+      <h2 id="word-preview"></h2>
+      <h3 id="search-result"></h3>
+
+    <div class="voiceToText">
+      <textarea id="convertText"></textarea>
+    </div>
+    </div>
+    <div id="transcript"></div>
   </body>
 </html>
