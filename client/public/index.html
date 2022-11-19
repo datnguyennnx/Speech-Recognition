@@ -13,18 +13,16 @@
   </head>
   <body>
     <div id="top-container">
-      <h1 id="title">Voice Assistant</h1>
-      <button id="start-btn" class="simple-btn">Start Assistant</button>
+      <h1 id="title">Voice Record</h1>
+      <button id="start-btn" class="simple-btn">Start</button>
     </div>
 
     <div id="visualizer-container">
-      <canvas id="output" width="250" height="200"></canvas>
-      <h2 id="word-preview"></h2>
-      <h3 id="search-result"></h3>
+      <canvas id="output" width="400" height="250"></canvas>
+      <div class="voiceToText">
+        <span id="convertText" ></span>
+      </div>
 
-    <div class="voiceToText">
-      <textarea id="convertText"></textarea>
-    </div>
     </div>
     <div id="transcript"></div>
   </body>

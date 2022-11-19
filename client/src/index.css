@@ -3,7 +3,7 @@ html {
   background-color: #000
 }
 
-body {
+.body {
   width: 100%;
   height: 100%;
   align-items: center;
@@ -48,30 +48,24 @@ body {
 
 #visualizer-container {
   width: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-#word-preview {
-}
 
 #search-result {
   margin-top: 2em;
 }
 
-#transcript {
-  position: fixed;
-  top: 60%;
-  width: 100vw;
-  padding-left: 20vw;
-  padding-right: 20vw;
-  font-size: x-large;
-}
 
 .voiceToText{
-  width: 50%;
+  width: 60%;
+  height: 100%;
   background-color: #000;
+  align-items: center;
+  justify-content: center;
 }
 
 #convertText{
@@ -79,12 +73,11 @@ body {
   outline: 0;
   border: 0;
   width: 100%;
-  height: 200px;
   border-radius: 10px;
   resize: none;
-  padding: 10px;
-  font-size: 14;
+  overflow: visible;
   margin-bottom: 10px;
   background-color: #000;
-  box-shadow: 0 0 30px 5px rgba(255, 255, 255, 0.1);
+  font-size: xx-large;
 }
+
