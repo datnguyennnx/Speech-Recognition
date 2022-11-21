@@ -1,15 +1,16 @@
 import * as tf from "@tensorflow/tfjs";
 import * as SpeechCommands from "@tensorflow-models/speech-commands";
+import VoiceModel from "./AI_MODELS/voice_model/model.json";
+import VoiceModelMetadata from "./AI_MODELS/voice_model/metadata.json";
+import { wait } from "./utils";
 
-import VoiceModel from "../AI_MODELS/voice_model/model.json";
-import VoiceModelMetadata from "../AI_MODELS/voice_model/metadata.json";
 
 export default class VoiceAssistant {
   constructor() {
     this.options = {
       includeSpectogram: true,
-      overlapFactor: 0.5,
-      invokeCallbackOnNoiseAndUnkown: false,
+      overlapFactor: 0.6,
+      invokeCallbackOnNoiseAndUnkown: true,
       probabilityThershold: 0.75,
     };
   }
@@ -32,20 +33,21 @@ export default class VoiceAssistant {
 
     const classLabels = this.recognizer.wordLabels();
 
-    this.recognizer.listen((result) => {
+    await this.recognizer.listen((result) => {
       const scores = result.scores;
-
-      const wordScore = scores.reduce((previousValue, value) => {
+       const wordScore =  scores.reduce((previousValue, value) => {
         if (previousValue) {
-          if (previousValue > value) return previousValue;
+          if (previousValue > value)  return previousValue
         }
-        return value;
+         return value 
       });
 
       const wordIdx = scores.findIndex((v) => v === wordScore);
       const word = classLabels[wordIdx];
-
+      wait(1000)
       if (onListen) onListen(word);
+      // console.log("Scores: ", scores)
+      // wait(1000)
     }, this.options);
   }
 
@@ -53,8 +55,8 @@ export default class VoiceAssistant {
     await this.recognizer.stopListening();
   }
 
-  saySpeech(text) {
+  async saySpeech(text) {
     const speech = new window.SpeechSynthesisUtterance(text);
-    window.speechSynthesis.speak(speech);
+    await window.speechSynthesis.speak(speech);
   }
 }

@@ -29,7 +29,7 @@ module.exports = {
           },
         },
       },
-      /*{
+      {
         test: /\.json$/,
         type: "javascript/auto",
         include: [path.resolve(__dirname, "AI_MODELS")],
@@ -39,7 +39,7 @@ module.exports = {
             name: "[name].json",
           },
         },
-      },*/
+      },
       {
         test: /\.(mp3|wav)$/,
         use: {
@@ -57,11 +57,14 @@ module.exports = {
       fs: false,
     },
   },
+  node: {
+    fs: 'empty'
+  },
   plugins: [
     new CopyWebpackPlugin({
       patterns: [
         {
-          context: "./AI_MODELS/",
+          context: "./AI_MODELS",
           from: "**/*.bin",
           to: "./",
           force: true,
@@ -73,7 +76,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       filename: "index.html",
-      template: "public/index.html",
+      template: "./public/index.html",
     }),
   ],
 };

@@ -4,11 +4,15 @@
         "@babel/preset-env",
         {
           "useBuiltIns": "entry"
-        }
+        },
+        
       ]
     ],
-    /*"plugins": [
-      "proposal-class-properties",
-      "proposal-export-default-from"
-    ]*/
+    
+    "plugins": [
+      "@babel/plugin-proposal-class-properties",
+      "@babel/plugin-proposal-export-default-from"
+    ]
   }
+
+  

@@ -4,7 +4,7 @@ export default class VoiceVisualizer {
   async openAudioStream() {
     try {
       this.audioStream = await navigator.mediaDevices.getUserMedia({
-        audio: true,
+        audio: true, sampleSize: 16
       });
     } catch (err) {
       console.error("Cannot open Audio Stream ", err);
