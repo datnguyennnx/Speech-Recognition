@@ -9,7 +9,7 @@ export default class VoiceAssistant {
   constructor() {
     this.options = {
       includeSpectogram: true,
-      overlapFactor: 0.6,
+      overlapFactor: 0.55,
       invokeCallbackOnNoiseAndUnkown: true,
       probabilityThershold: 0.75,
     };
