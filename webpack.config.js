@@ -64,7 +64,7 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         {
-          context: "./AI_MODELS",
+          context: "./src/AI_MODELS",
           from: "**/*.bin",
           to: "./",
           force: true,

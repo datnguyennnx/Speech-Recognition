@@ -7,7 +7,7 @@ const textArea = document.getElementById("convertText")
 const startButton = document.getElementById("start-btn")
 
 const voiceVisualizer = new VoiceVisualizer()
-const voiceAssistant = new VoiceAssistant()
+//const voiceAssistant = new VoiceAssistant()
 
 
 const App = () => {
@@ -34,23 +34,23 @@ const App = () => {
   //       break
   //     case "Background Noise":
   //       voiceAssistant.saySpeech("Noise")
-  //       await wait(500)
+  //       await wait(2500)
   //       break
   //     case "Background Noise Afternoon":
   //       voiceAssistant.saySpeech("Noise Afternoon")
-  //       await wait(500)
+  //       await wait(2500)
   //       break
   //     case "Background Unkown":
   //       voiceAssistant.saySpeech("Noise Unknown")
-  //       await wait(500)
+  //       await wait(2500)
   //       break    
   //     case "Snap":
   //       voiceAssistant.saySpeech("Snapping tach tach")
-  //       await wait(500)
+  //       await wait(2500)
   //       break
   //     case "Clap":
   //       voiceAssistant.saySpeech("Hand Clap Clap Clap")
-  //       await wait(500)
+  //       await wait(2500)
   //       break  
   //     case "CoffeeNoise":
   //       voiceAssistant.saySpeech("Noise Coffee")
@@ -78,7 +78,8 @@ const App = () => {
   //Start Visualizer
   let isStarted = false
   startButton.onclick = async () => {
-    if (!isStarted){var speech = true;
+    if (!isStarted){
+      var speech = true;
       await recognition.addEventListener('result', e =>{
         const transcript = Array.from(e.results)
         .map(result => result[0])
@@ -91,23 +92,21 @@ const App = () => {
       }
       startButton.innerHTML = "Starting"
       await voiceVisualizer.startVisualization()
-      // await voiceAssistant.startAssistant(onListen)
+      //await voiceAssistant.startAssistant(onListen)
       isStarted = true;
       startButton.innerText = "Stop Record "
       recognition.continous = true
       recognition.interimResults = true
       recognition.lang = 'en-US' //vi-VN - en-US
 
-      
-
     } else {
       startButton.innerText = "Stopping...";
-      // await voiceAssistant.stopAssistant();
+      //await voiceAssistant.stopAssistant();
       await voiceVisualizer.stopVisualization();
       isStarted = false;
       recognition.interimResults = false
       startButton.innerText = "Start";
-    }
+      }
     }
 }
 
