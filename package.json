@@ -1,43 +1,50 @@
 {
-  "name": "web-speech-visualizer",
-  "version": "0.1.0",
+  "name": "vite-project",
   "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
   "dependencies": {
-    "@babel/plugin-proposal-class-properties": "^7.18.6",
-    "@tensorflow-models/speech-commands": "^0.5.4",
-    "@tensorflow/tfjs": "^4.1.0",
-    "core-js": "^3.26.1",
-    "fs": "^0.0.1-security",
+    "@types/dom-speech-recognition": "^0.0.1",
+    "@types/react-speech-recognition": "^3.9.2",
+    "@vitejs/plugin-legacy": "^4.1.1",
+    "classnames": "^2.3.2",
     "path": "^0.12.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
-    "wave-visualizer": "^1.0.6",
-    "webpack": "^5.75.0",
-    "webpack-dev-server": "^4.11.1"
+    "react-hook-speech-to-text": "^0.8.0",
+    "react-speech-recognition": "^3.10.0",
+    "sound-visualizer": "^1.2.0",
+    "tailwind-variants": "^0.1.14",
+    "zod": "^3.22.2"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+  "pnpm": {
+    "autoInstallPeers": true,
+    "peerDependencyIssues": {
+      "autoInstallPeers": true
+    }
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.22.15",
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "@vitejs/plugin-react": "^4.0.3",
+    "autoprefixer": "^10.4.15",
+    "eslint": "^8.45.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.3",
+    "postcss": "^8.4.28",
+    "regenerator-runtime": "^0.14.0",
+    "tailwindcss": "^3.3.3",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5",
+    "vite-plugin-babel": "^1.1.3"
   }
 }
